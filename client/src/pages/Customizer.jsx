@@ -8,11 +8,13 @@ import { download } from '../assets'
 import { downloadCanvasToImage, reader} from '../config/helpers';
 import { EditorTabs, FilterTabs, DecalTypes } from '../config/constants';
 import { fadeAnimation, slideAnimation } from '../config/motion';
+
+
 const Customizer = () => {
   const snap = useSnapshot(state);
 
   const [file, setFile] = useState('');
-  const [prompt, setPtompt] = useState('');
+  const [prompt, setPrompt] = useState('');
   const [generatingImg, setGeneratingImg]= useState(false);
   const [activeEditorTab, setActiveEditorTab] = useState("");
   const [activeFilterTab, setActiveFilterTab] = useState({
@@ -31,9 +33,27 @@ const Customizer = () => {
         readFile = {readFile}
         />
       case "aipicker":
-        return <AIPicker/>
+        return <AIPicker
+          prompt={prompt}
+          setPrompt={setPrompt}
+          generatingImg = {generatingImg}
+          handleSubmit = {handleSubmit}
+
+        />
       default:
         return null;
+    }
+  }
+  const handleSubmit = async (type) =>{
+    if(!prompt) return alert("Please enter a prompt");
+
+    try{
+
+    } catch(error){
+      alert(error)
+    } finally{
+      setGeneratingImg(false);
+      setActiveEditorTab("");
     }
   }
 
@@ -48,7 +68,7 @@ const Customizer = () => {
 
   const handleActiveFilterTab = (tabName) => {
     switch (tabName) {
-      case "logoshirt":
+      case "logoShirt":
         state.isLogoTexture = !activeFilterTab[tabName];
         break;
       case "stylishShirt":
