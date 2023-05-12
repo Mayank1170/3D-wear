@@ -1,7 +1,6 @@
 import React from 'react'
 import state from '../store'
 import { useSnapshot } from 'valtio'
-import { color } from 'framer-motion'
 import { getContrastingColor } from '../config/helpers'
 
 const CustomButton = ({ type, title, customStyles, handleClick }) => {
