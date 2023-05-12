@@ -2,7 +2,7 @@ import React from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { useSnapshot } from 'valtio'
 import state from '../store';
-import { CustomButton } from '../componets';
+import { CustomButton } from '../components';
 import {
   headContainerAnimation,
   headContentAnimation,
