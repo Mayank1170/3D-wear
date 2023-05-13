@@ -18,7 +18,8 @@
     "react-color": "^2.19.3",
     "react-dom": "^18.2.0",
     "three": "^0.152.2",
-    "valtio": "^1.10.5"
+    "valtio": "^1.10.5",
+    "yarn": "^1.22.19"
   },
   "devDependencies": {
     "@types/react": "^18.0.28",
